@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: 5px 5px 5px #81808082;
+}
+
+#logoContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+        #library{
+            font-size: 72px;
+            font-family: 'Anek Gurmukhi', sans-serif;
+            font-weight: normal;
+
+        }
+        #gitcontainer{
+            margin-right: 100px;
+        }
+
+#libraryContainer{
+    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    
+  }
+
+    #inputInfoBook{
+        background-color: #EEEEEE;
+        border-radius: 25px;
+        height: 400px;
+        width: 300px; 
+        position: absolute;
+        top: 15%;
+        left: 40%;
+    }
+        #flexContainer{
+            display: flex;
+            align-items: center;
+            gap:20px;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+            .inputTitle{
+                font-family: 'Anek Gurmukhi', sans-serif;
+                font-weight: bold;
+                font-size: 25px;
+            }
+
+            input::placeholder{
+                text-align:start;
+            }
+
+            input{
+                border: none;
+                border-radius:10px;
+                height: 40px;
+                width: 220px;
+            }
+            .inputForm{
+                font-family: 'Anek Gurmukhi', sans-serif;
+                font-weight: normal;
+                font-size: 20px;
+            }
+
+          #checkBox{
+              height: 20px;
+          }
+
+            #addButtonOverlay{
+                background-color: rgb(0, 182, 18);
+                color: white;
+                font-size: 22px;
+                font-family: 'Anek Gurmukhi', sans-serif;
+                font-weight: normal;
+                border:none;
+                border-radius: 10px;
+                height: 45px;
+                width: 150px;
+            }
+            #flexCont{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 50px;
+            }
+       
+
+    #addBook{
+        height: 50px;
+        width: 150px;
+    }
+
+    #bookContainer{
+        border: 5px solid rgb(87, 87, 221);
+    }

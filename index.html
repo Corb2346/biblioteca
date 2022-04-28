@@ -6,7 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="biblioteca.css">
     <script src="biblioteca.js"defer></script>
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>Bilioteca</title>
+
+    <header>
+
+        <div id="logoContainer"> 
+        <div id="logo"><img src="./logo_top.png" alt="logo_top" height="125px" width="125px"></div>
+
+        <div id="library"> Library</div>
+
+        </div>
+
+        <div id="gitcontainer"><img src="./github_log.png" alt="git_logo" height="50px" width="50px" ></div>
+
+    </header>
+
+    <div id="libraryContainer">
+
+            <div id="overlay" > 
+            
+                <div id="inputInfoBook">
+
+                    <div id="flexContainer"> 
+
+                        <div class="inputTitle">Add a Book </div>
+
+                        <input class="inputForm" placeholder="Title" type="text">  
+
+                        <input class="inputForm" placeholder="Author" type="text"> 
+
+                        <input class="inputForm" placeholder="Number of Pages" type="text"> 
+
+                        <div  class="inputForm" id="flexCont"> 
+                         
+                            <label for="readeIt" id="readIt"> Have you already read it?</label>  <input id="checkBox"type="checkbox"> 
+                        </div>
+
+                        
+                        
+
+                        <button id="addButtonOverlay"onclick="off()"> addBook </button>
+                    
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        <button id="addBook" onclick="on()">+ AddBook</button>
+
+        
+
+        <div id="bookContainer" >ACA VAN A IR LAS TARJETAS DE LOS LIBROS
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
 </head>
 <body>
     
