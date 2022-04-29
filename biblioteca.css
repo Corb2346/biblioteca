@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-   
+  
 }
 
 header{
@@ -125,6 +125,11 @@ header{
         font-size: 50px;
         background-color: white;
         margin-top: 15px;
+        border-radius: 20px;
+        padding-top: 15px;
+    }
+    #addBookMainMenu:hover{
+        background-color:rgba(0, 0, 0, 0.196) ;
     }
 
 
@@ -148,11 +153,10 @@ header{
             font-weight: normal;
             font-size: 30px;
             gap: 15px;
-            padding-top: 20px;
+            padding-top: 25px;
             text-align: center;
             box-shadow: 5px 5px  #81808082;
             display: none;
-          
         }
 
             .diplayInfo{

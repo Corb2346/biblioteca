@@ -30,21 +30,19 @@
 
                     <div id="flexContainer"> 
 
+                  
                         <div class="inputTitle">Add a Book </div>
 
-                        <input class="inputForm" placeholder="Title" type="text" name="title" minlength="1" maxlength="20"required>  
+                        <input id="inputTitleBook" class="inputForm" placeholder="Title" type="text" name="title" minlength="1" maxlength="20"x|>  
 
-                        <input class="inputForm" placeholder="Author" type="text"  maxlength="20" required> 
+                        <input id="inputAuthorBook" class="inputForm" placeholder="Author" type="text"  name="author" maxlength="20"  > 
 
-                        <input class="inputForm" placeholder="Number of Pages" type="number" min="1" value="0"required> 
+                        <input id="inputnumberPagesBook" class="inputForm" placeholder="Number of Pages" type="number"  > 
 
                         <div  class="inputForm" id="flexCont"> 
                          
-                            <label for="readeIt" id="readIt"> Have you already read it?</label>  <input id="checkBox"type="checkbox"required> 
+                            <label  for="readeIt" id="readIt"> Have you already read it?</label>  <input id="checkBox"type="checkbox" > 
                         </div>
-
-                        
-                        
 
                         <button id="addButtonOverlay" onclick="off()"> AddBook </button>
                     
