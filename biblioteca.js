@@ -1,5 +1,6 @@
 let myLibrary = []; //arreglo que almacenará los libros
 let inputInfoBook = document.getElementById("inputInfoBook");
+let bookCard = document.getElementById("bookCard");
 
 let addBook = document.getElementById("addBook");
 
@@ -10,6 +11,7 @@ function on() {
   
   function off() {
     document.getElementById("overlay").style.display = "none";
+    bookCard.style.display = "flex";
   }
 
 function book(title,author,numberPages,read){ //objeto libro que crea libros al introducir los valores

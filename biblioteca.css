@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+   
 }
 
 header{
@@ -27,7 +28,7 @@ header{
         }
 
 #libraryContainer{
-    border: 5px solid blue;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +103,9 @@ header{
                 border-radius: 10px;
                 height: 45px;
                 width: 150px;
+                padding: 0;
+                margin: 0;
+
             }
             #flexCont{
                 display: flex;
@@ -111,11 +115,62 @@ header{
             }
        
 
-    #addBook{
-        height: 50px;
-        width: 150px;
+    #addBookMainMenu{
+        text-align: center;
+        height: 75px;
+        width: 250px;
+        border: none;
+        font-family: 'Anek Gurmukhi', sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+        background-color: white;
+        margin-top: 15px;
     }
 
-    #bookContainer{
-        border: 5px solid rgb(87, 87, 221);
-    }
+
+#bookContainer{
+    border: 5px solid rgb(87, 87, 221);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+        #bookCard{  
+            background-color: #EEEEEE;
+            border-radius: 25px;
+            height: 275px;
+            width: 275px; 
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Anek Gurmukhi', sans-serif;
+            font-weight: normal;
+            font-size: 30px;
+            gap: 15px;
+            padding-top: 20px;
+            text-align: center;
+            box-shadow: 5px 5px  #81808082;
+            display: none;
+          
+        }
+
+            .diplayInfo{
+                background-color: white;
+                border: 15px;
+                border-radius: 15px;
+                width: 220px;
+                padding-top: 5px;
+            }
+
+        #delete{
+            background-color: red;
+            border-radius: 15px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            width: 150px;
+            height: 35px;
+        }
+
+

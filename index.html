@@ -32,48 +32,57 @@
 
                         <div class="inputTitle">Add a Book </div>
 
-                        <input class="inputForm" placeholder="Title" type="text">  
+                        <input class="inputForm" placeholder="Title" type="text" name="title" minlength="1" maxlength="20"required>  
 
-                        <input class="inputForm" placeholder="Author" type="text"> 
+                        <input class="inputForm" placeholder="Author" type="text"  maxlength="20" required> 
 
-                        <input class="inputForm" placeholder="Number of Pages" type="text"> 
+                        <input class="inputForm" placeholder="Number of Pages" type="number" min="1" value="0"required> 
 
                         <div  class="inputForm" id="flexCont"> 
                          
-                            <label for="readeIt" id="readIt"> Have you already read it?</label>  <input id="checkBox"type="checkbox"> 
+                            <label for="readeIt" id="readIt"> Have you already read it?</label>  <input id="checkBox"type="checkbox"required> 
                         </div>
 
                         
                         
 
-                        <button id="addButtonOverlay"onclick="off()"> addBook </button>
+                        <button id="addButtonOverlay" onclick="off()"> AddBook </button>
                     
                     </div>
                 </div>
 
             </div>
 
-
-
-        <button id="addBook" onclick="on()">+ AddBook</button>
-
-        
-
-        <div id="bookContainer" >ACA VAN A IR LAS TARJETAS DE LOS LIBROS
-
-
-
-
+            <button id="addBookMainMenu" onclick="on()">+ AddBook</button>
 
         </div>
 
-
-
-
+    
     </div>
 
 </head>
+
 <body>
-    
+
+   
+        <div id="bookContainer" >
+
+            <div id="bookCard"> 
+
+                <div id="titleBook" class="diplayInfo"> TitleBook </div>
+
+                <div id="authorBook" class="diplayInfo"> AuthorBook </div>
+
+                <div id="numberPagesBook" class="diplayInfo"> numberPages</div>
+
+                <div id="status" class="diplayInfo">reade it </div>
+
+                <button id="delete"> delete</button>
+
+
+            </div>
+
+        </div>
+
 </body>
 </html>
