@@ -1,5 +1,6 @@
 let myLibrary = []; //arreglo que almacenará los libros
-let contador=0; // variable que recorre el arreglo al agregar o quitar libros
+let indexArray = 0; // variable que recorre el arreglo al agregar o quitar libros
+let newBook="";
 
 let inputInfoBook = document.getElementById("inputInfoBook"); //muestra el formulario para añadir libros
 let bookCard = document.getElementById("bookCard"); // muestra una tabla con la informacion introducida
@@ -67,7 +68,6 @@ function on() {//crea un overlay y muestra el formulario para crear un libro
     
   }
 
-
   function book(title,author,numberPages,read){ //objeto libro que crea libros al introducir los valores
     this.title = title;
     this.author = author;
@@ -99,11 +99,12 @@ function addBookToLibrary(title,author,numberPages,read) { // funcion que recibe
           status.style.backgroundColor = "#FF4949";
         }
         
+        myLibrary[indexArray] = bookNew;
+        console.log(myLibrary[indexArray]);
 
-        return bookNew;
 }   
 
-let bookNew = addBookToLibrary("TheHobbit","Tolkien",300,"yes");
+/*let bookNew = addBookToLibrary("TheHobbit","Tolkien",300,"yes");
 
 console.log(bookNew.title);
 console.log(bookNew.author);
@@ -135,4 +136,4 @@ myLibrary[contador] = bookNew;
 console.log(myLibrary[contador]);
 
 contador++;
-console.log(contador);
+console.log(contador);*/
