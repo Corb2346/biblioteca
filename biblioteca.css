@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-  
+    background-color: #EEEEEE;
 }
 
 header{
@@ -138,6 +138,8 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: auto;
+    width: 100%;
 }
 
         #bookCard{  
@@ -176,5 +178,11 @@ header{
             width: 150px;
             height: 35px;
         }
+
+footer{
+    background-color: #EEEEEE;
+    position: fixed;
+
+}
 
 

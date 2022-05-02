@@ -12,12 +12,12 @@ let addButtonOverlay = document.querySelector("#addButtonOverlay");
 
 addButtonOverlay.addEventListener('click',addData);
 
-function on() {
+function on() {//crea un overlay y muestra el formulario para crear un libro
     document.getElementById("overlay").style.display = "block";
     inputInfoBook.style.display = "block";
   }
   
-  function off() {
+  function off() { //valida la informacion si los campos son vacios manda mensajes que la inf es requerida
     if(inputTitleBook.value === "" || inputTitleBook.value === null && inputAuthorBook.value === "" || inputAuthorBook.value === null && inputnumberPagesBook.value === 0 || inputnumberPagesBook.value === null || inputnumberPagesBook.value === " " ){
 
       inputTitleBook.placeholder = "Title requiered";
@@ -32,22 +32,26 @@ function on() {
     } else if(inputnumberPagesBook.value <= 0 || inputnumberPagesBook.value === null || inputnumberPagesBook.value === " " ){
 
       inputnumberPagesBook.placeholder = "Insert number of Pages";
-    } else {document.getElementById("overlay").style.display = "none";
+    } else {document.getElementById("overlay").style.display = "none";//si no faltan campos por llenar quita el display y el formulario
     bookCard.style.display = "flex";
     }
   }
 
-  function addData(){
+  function addData(){//captura los datos introducidos en los input del html
     let titleBook = inputTitleBook.value;
     console.log(titleBook);
     let authorBook = inputAuthorBook.value;
     console.log(authorBook);
     let pagesBook = inputnumberPagesBook.value;
     console.log(pagesBook);
-    
+    let readStatus = "yes";
+
+    addBookToLibrary(titleBook,author,numberPages,read);
+
   }
 
-function book(title,author,numberPages,read){ //objeto libro que crea libros al introducir los valores
+
+  function book(title,author,numberPages,read){ //objeto libro que crea libros al introducir los valores
     this.title = title;
     this.author = author;
     this.numberPages = numberPages;
