@@ -22,6 +22,64 @@ function on() {//crea un overlay y muestra el formulario para crear un libro
     document.getElementById("overlay").style.display = "block";
     inputInfoBook.style.display = "block";
   }
+
+function createInfoCard(){
+
+  const newCardBook= document.createElement("newCardBook");//crea el contenedor  //da estilos a el contenedor donde se muestra la info
+  newCardBook.classList.add("bookCard");
+  /*newCardBook.style.backgroundColor = "#d2d2d2";
+  newCardBook.style.borderRadius ="25px";
+  newCardBook.style.height = "350px";
+  newCardBook.style.width = "275px";
+  newCardBook.display = "flex";
+  newCardBook.flexwrap= "wrap";
+  newCardBook.style.flexDirection = "column";
+  newCardBook.style.alignItems ="center";
+  newCardBook.style.fontFamily = "Anek Gurmukhi sans-serif";
+  newCardBook.style.fontSize = "30px";
+  newCardBook.style.gap ="15px";
+  newCardBook.style.paddingTop = "25px";
+  newCardBook.style.textAlign ="center";
+  newCardBook.style.boxShadow ="5px 5px #5a5a5a82";  */
+
+  const InputTitleBook =document.createElement("TitleBook"); // se crean los divs dentro de la tarjeta
+  const InputAuthorBook = document.createElement("AuthorBook");
+  const InputNumberPages = document.createElement("PagesBook");
+  const InputStatus = document.createElement("Status");
+  const UpdateStatus = document.createElement("updateStatus");
+  const Delete = document.createElement("BUTTON");
+  const TextButton = document.createTextNode("Delete");
+  newCardBook.appendChild(InputTitleBook);
+  newCardBook.appendChild(InputAuthorBook);
+  newCardBook.appendChild(InputNumberPages);
+  newCardBook.appendChild(InputStatus);
+  newCardBook.appendChild(UpdateStatus);
+  Delete.appendChild(TextButton);//se añaden divs y botones 
+  newCardBook.appendChild(Delete); 
+  bookContainer.appendChild(newCardBook);
+
+  //clase a divs para dar estilo
+
+  InputTitleBook.textContent = 'TitleBook';
+  InputTitleBook.classList.add('diplayInfo');
+
+  InputAuthorBook.textContent = 'AuthorBook';
+  InputAuthorBook.classList.add('diplayInfo');
+
+  InputNumberPages.textContent = 'NumberPages';
+  InputNumberPages.classList.add('diplayInfo');
+
+  InputStatus.textContent = 'Read IT';
+  InputStatus.classList.add('diplayInfo');
+
+  UpdateStatus.textContent = 'UpdateSatus';
+  UpdateStatus.classList.add('diplayInfo');
+
+  Delete.textContent = 'Delete';
+  Delete.classList.add('delete');
+
+
+}
   
   function off() { //valida la informacion si los campos son vacios manda mensajes que la inf es requerida
     if(inputTitleBook.value === "" || inputTitleBook.value === null && inputAuthorBook.value === "" || inputAuthorBook.value === null && inputnumberPagesBook.value === 0 || inputnumberPagesBook.value === null || inputnumberPagesBook.value === " " ){
@@ -39,9 +97,12 @@ function on() {//crea un overlay y muestra el formulario para crear un libro
 
       inputnumberPagesBook.placeholder = "Insert number of Pages";
     } else {document.getElementById("overlay").style.display = "none";//si no faltan campos por llenar quita el display y el formulario
-    bookCard.style.display = "flex";
+            bookCard.style.display = "flex";
+            createInfoCard();
     }
   }
+
+
 
   function addData(){//captura los datos introducidos en los input del html
     let readStatus ="";

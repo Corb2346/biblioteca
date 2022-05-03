@@ -27,7 +27,6 @@ header{
         }
 
 #libraryContainer{
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,9 +43,7 @@ header{
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
-    
   }
 
     #inputInfoBook{
@@ -141,8 +138,8 @@ header{
     width: 100%;
 }
 
-        #bookCard{  
-            background-color: #EEEEEE;
+        .bookCard{  
+            background-color: #d2d2d2;
             border-radius: 25px;
             height: 350px;
             width: 275px; 
@@ -156,8 +153,8 @@ header{
             gap: 15px;
             padding-top: 25px;
             text-align: center;
-            box-shadow: 5px 5px  #81808082;
-            display: none;
+            box-shadow: 5px 5px  #5a5a5a82;
+           /* display: none;*/
         }
 
             .diplayInfo{
@@ -168,7 +165,7 @@ header{
                 padding-top: 5px;
             }
 
-        #delete{
+        .delete{
             background-color: red;
             border-radius: 15px;
             font-size: 20px;
@@ -179,9 +176,7 @@ header{
         }
 
 footer{
-    background-color: #EEEEEE;
     position: fixed;
-
 }
 
 
