@@ -10,9 +10,9 @@ let inputAuthorBook = document.getElementById("inputAuthorBook");//div donde se 
 let inputnumberPagesBook = document.getElementById("inputnumberPagesBook");//div donde se mete la info
 let addButtonOverlay = document.querySelector("#addButtonOverlay");
 
-let titleBook = document.getElementById("titleBook");//text area donde se muestra la informacion del titulo ingresado por usuario
+/*let titleBook = document.getElementById("titleBook");//text area donde se muestra la informacion del titulo ingresado por usuario
 let authorBook = document.getElementById("authorBook");//text area donde se muestra la informacion del autor ingresado por usuario
-let numberPagesBook = document.getElementById("numberPagesBook");//text area donde se muestra la informacion del numero de paginas ingresado por usuario
+let numberPagesBook = document.getElementById("numberPagesBook");//text area donde se muestra la informacion del numero de paginas ingresado por usuario*/
 let checkBox = document.getElementById("checkBox");//llama al checkbox 
 let status = document.getElementById("status");
 
@@ -27,20 +27,6 @@ function createInfoCard(){
 
   const newCardBook= document.createElement("newCardBook");//crea el contenedor  //da estilos a el contenedor donde se muestra la info
   newCardBook.classList.add("bookCard");
-  /*newCardBook.style.backgroundColor = "#d2d2d2";
-  newCardBook.style.borderRadius ="25px";
-  newCardBook.style.height = "350px";
-  newCardBook.style.width = "275px";
-  newCardBook.display = "flex";
-  newCardBook.flexwrap= "wrap";
-  newCardBook.style.flexDirection = "column";
-  newCardBook.style.alignItems ="center";
-  newCardBook.style.fontFamily = "Anek Gurmukhi sans-serif";
-  newCardBook.style.fontSize = "30px";
-  newCardBook.style.gap ="15px";
-  newCardBook.style.paddingTop = "25px";
-  newCardBook.style.textAlign ="center";
-  newCardBook.style.boxShadow ="5px 5px #5a5a5a82";  */
 
   const InputTitleBook =document.createElement("TitleBook"); // se crean los divs dentro de la tarjeta
   const InputAuthorBook = document.createElement("AuthorBook");
@@ -101,8 +87,6 @@ function createInfoCard(){
             createInfoCard();
     }
   }
-
-
 
   function addData(){//captura los datos introducidos en los input del html
     let readStatus ="";

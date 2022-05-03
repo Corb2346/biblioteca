@@ -131,11 +131,14 @@ header{
 
 #bookContainer{
     border: 5px solid rgb(87, 87, 221);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns:25% 25% 25% 25%;
+    grid-row: 33%;
+    justify-content: center;
+    margin-left: 75px;
+    gap:50px;
     height: auto;
-    width: 100%;
+
 }
 
         .bookCard{  
