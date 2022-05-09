@@ -1,9 +1,9 @@
 let myLibrary = []; //arreglo que almacenará los libros
+let library = [];
 let indexArray = 0; // variable que recorre el arreglo al agregar o quitar libros
 let newBook="";
 let elementArray = 0;
 let idnumber = 0 ;
-let randomId = getRandomInt(1000);
 
 let inputInfoBook = document.getElementById("inputInfoBook"); //muestra el formulario para añadir libros
 let bookCard = document.getElementById("bookCard"); // muestra una tabla con la informacion introducida
@@ -21,28 +21,33 @@ let status = document.getElementById("status");
 
 addButtonOverlay.addEventListener('click',addBookToLibrary);
 
-function deleteFunc(){
-  console.log("ya sirvo");
-  let elementDelete = document.querySelector("newCardBook");
-  
-  let removeBook = parseInt(document.querySelector("newCardBook").dataset.index);
-  console.log(removeBook);
+function deleteFunc(event){
+ 
 
+  console.log("ya sirvo");
+  let elementDelete =  event.target.parentNode;
+  console.log(elementDelete);
+  console.log(event.target.dataset.index);
+  let  removeCard = document.querySelector("newCardBook");
+   /*let removeCardIndex = removeCard.dataset.index;*/
+  let removeBook = event.target.dataset.index;
+  console.log(removeBook);
+  /*console.log(removeCardIndex);*/
   myLibrary.splice(removeBook,1);
   elementDelete.remove();
-  
+  /*library.splice(removeBook,1)*/
+
   /*console.log(bookeRemove);  */
   /*console.log(typeof bookeRemove);  */
   
   console.log(typeof myLibrary);
-
   console.log(myLibrary);
- 
+  /*console.log(typeof library);
+  console.log(library);*/
+
+
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
 
 function on() {//crea un overlay y muestra el formulario para crear un libro
     document.getElementById("overlay").style.display = "block";
@@ -50,7 +55,12 @@ function on() {//crea un overlay y muestra el formulario para crear un libro
   }
 
 function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
+ let newBook = new book(titleBook,authorBook,pagesBook,readStatus);
 
+
+  myLibrary.push(newBook);
+  console.log(myLibrary);
+ 
   const newCardBook= document.createElement("newCardBook");//crea el contenedor  //da estilos a el contenedor donde se muestra la info
   newCardBook.classList.add("bookCard");
   
@@ -62,7 +72,9 @@ function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
   const Delete = document.createElement("BUTTON");
   const TextButton = document.createTextNode("Delete");
   newCardBook.setAttribute("data-index",elementArray);
-  newCardBook.setAttribute("Id",idnumber);
+  Delete.setAttribute("data-index",elementArray);
+  Delete.setAttribute("Id","buttonRemove");
+
   idnumber++;
   console.log(elementArray);
   elementArray++;
@@ -78,26 +90,27 @@ function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
 
   //clase a divs para dar estilo
 
-  InputTitleBook.textContent =titleBook;
+  InputTitleBook.textContent = newBook.title;
   InputTitleBook.classList.add('diplayInfo');
 
-  InputAuthorBook.textContent =authorBook;
+  InputAuthorBook.textContent =newBook.author;
   InputAuthorBook.classList.add('diplayInfo');
 
-  InputNumberPages.textContent = pagesBook;
+  InputNumberPages.textContent = newBook.numberPages;
   InputNumberPages.classList.add('diplayInfo');
 
-  InputStatus.textContent = readStatus;
+  InputStatus.textContent = newBook.read;
   InputStatus.classList.add('diplayInfo');
 
-  if( readStatus === "yes"){
+  if( readStatus === "read It "){
 
     InputStatus.style.backgroundColor = "#5FFF7A";
-    InputStatus.textContent = "read It";
+    InputStatus.textContent = newBook.read;
   } else {
     
     InputStatus.style.backgroundColor = "#FF4949";
-    InputStatus.textContent = "No read It";
+    newBook.read = "No read it";
+    InputStatus.textContent = newBook.read;
   }
 
   UpdateStatus.textContent = 'UpdateSatus';
@@ -109,7 +122,11 @@ function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
   newCardBook.style.display ="flex";
 
   Delete.addEventListener('click',deleteFunc);
-}
+
+  /*library.push(newCardBook);
+  console.log(library);*/
+  }
+
   
   function off() { //valida la informacion si los campos son vacios manda mensajes que la inf es requerida
     if(inputTitleBook.value === "" || inputTitleBook.value === null && inputAuthorBook.value === "" || inputAuthorBook.value === null && inputnumberPagesBook.value === 0 || inputnumberPagesBook.value === null || inputnumberPagesBook.value === " " ){
@@ -136,9 +153,9 @@ function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
     let readStatus ="";
 
     if(checkBox.checked == true){
-      readStatus = "yes";
+      readStatus = "read It ";
     } else {
-      readStatus = "no";
+      readStatus = "no read It";
     }
 
     let titleBook = inputTitleBook.value;
@@ -156,17 +173,17 @@ function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
      alert("Fields Requiere");
     } else {
 
-      let newBook = new book(titleBook,authorBook,pagesBook,readStatus);
-    console.log(newBook);
+      /*let newBook = new book(titleBook,authorBook,pagesBook,readStatus);
+    console.log(newBook);*/
 
-    myLibrary.push(newBook);
+    /*myLibrary.push(newBook);*/
 
     console.log(myLibrary);
+
     createInfoCard(titleBook,authorBook,pagesBook,readStatus);
     }
   }
 
-  console.log(myLibrary[indexArray]);
 
   function book(title,author,numberPages,read){ //objeto libro que crea libros al introducir los valores
     this.title = title;
@@ -178,6 +195,8 @@ function createInfoCard(titleBook,authorBook,pagesBook,readStatus){
         console.log(" " + this.title+ " " + this.author +" " + this.numberPages +" " + this.read );
     }
 }
+
+
 
 
 /*function addBookToLibrary(title,author,numberPages,read) { // funcion que recibe info del html y lo va a pasar a la funcion book
