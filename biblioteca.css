@@ -20,8 +20,8 @@ header{
             font-size: 72px;
             font-family: 'Anek Gurmukhi', sans-serif;
             font-weight: normal;
-
         }
+        
         #gitcontainer{
             margin-right: 100px;
         }
@@ -132,13 +132,12 @@ header{
 #bookContainer{
     border: 5px solid rgb(87, 87, 221);
     display: grid;
-    grid-template-columns:25% 25% 25% 25%;
-    grid-row: 33%;
+    grid-template-columns:20% 20% 20% 20%;
     justify-content: center;
-    margin-left: 75px;
+    margin-left: 35px;
+    margin-right: 35px;
     gap:50px;
     height: auto;
-
 }
 
         .bookCard{  
@@ -157,7 +156,7 @@ header{
             padding-top: 25px;
             text-align: center;
             box-shadow: 5px 5px  #5a5a5a82;
-           /* display: none;*/
+            display: none;
         }
 
             .diplayInfo{
