@@ -20,19 +20,21 @@ let status = document.getElementById("status");
 
 addButtonOverlay.addEventListener('click',addBookToLibrary);
 
-function deleteCard(event){
+/*function deleteCard(event){
   let bookContainer = document.querySelectorAll("newcardbook");
   console.log(bookContainer);
   console.log(event.tarjet);
   
-
   let elementDelete =  event.target.parentNode;
   console.log(elementDelete);
 
-  elementDelete.remove();
+  myLibrary.splice(myLibrary.indexOf(newBook),1);
+    elementDelete.remove();
 
-  
-}
+    console.log(myLibrary);
+
+
+}*/
 
 
 function on() {//crea un overlay y muestra el formulario para crear un libro
@@ -53,14 +55,8 @@ function createInfoCard(newBook){
   const UpdateStatus = document.createElement("updateStatus");
   const Delete = document.createElement("BUTTON");
   const TextButton = document.createTextNode("Delete");
-  /*newCardBook.setAttribute("data-index",myLibrary.length-1);
-  Delete.setAttribute("data-index",myLibrary.length-1);
-  Delete.setAttribute("Id","buttonRemove");
-
-  idnumber++;
-  console.log(elementArray);
-  elementArray++;
-  console.log(elementArray);*/
+  newCardBook.setAttribute("id", myLibrary.indexOf(newBook));
+  
   newCardBook.appendChild(InputTitleBook);
   newCardBook.appendChild(InputAuthorBook);
   newCardBook.appendChild(InputNumberPages);
@@ -103,7 +99,21 @@ function createInfoCard(newBook){
 
   newCardBook.style.display ="flex";
  
-  Delete.addEventListener("click",deleteCard)
+  Delete.addEventListener("click",(event) => {
+
+    let bookContainer = document.querySelectorAll("newcardbook");
+    console.log(bookContainer);
+    console.log(event.tarjet);
+    
+    let elementDelete =  event.target.parentNode;
+    console.log(elementDelete);
+    elementDelete.remove();
+
+    
+    myLibrary.splice(myLibrary.indexOf(newBook),1);
+
+    console.log(myLibrary);
+  })
  
   }
 

@@ -177,6 +177,11 @@ header{
             height: 35px;
         }
 
+        .fadeOut{
+            opacity:0;
+            transition: 0.5s;
+        }
+
 footer{
     position: fixed;
 }
