@@ -4,6 +4,7 @@ body{
 }
 
 header{
+    border: red solid 2px;
     background-color: #EEEEEE;
     display: flex;
     justify-content:space-between;
@@ -132,6 +133,7 @@ header{
     display: grid;
     grid-template-columns:20% 20% 20% 20%;
     justify-content: center;
+    align-items: center;
     margin-left: 35px;
     margin-right: 35px;
     gap:50px;
@@ -201,6 +203,20 @@ footer{
 @media only screen and (max-width: 550px) {
     
 #bookContainer{
-    grid-template-columns:100%;
+    grid-template-columns:65%;
+    padding-left: auto;
 }
     }
+
+    
+@media only screen and (max-width: 400px) {
+   
+header{
+    width:fit-content;
+    height: fit-content;
+}
+.inputTitle{
+    width: center;
+}
+
+        }
