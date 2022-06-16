@@ -20,32 +20,19 @@ let status = document.getElementById("status");
 
 addButtonOverlay.addEventListener('click',addBookToLibrary);
 
-/*function deleteFunc(event){
-  let removeBook = event.target.dataset.index;
-  console.log(removeBook);
-  console.log("ya sirvo");
+function deleteCard(event){
+  let bookContainer = document.querySelectorAll("newcardbook");
+  console.log(bookContainer);
+  console.log(event.tarjet);
+  
+
   let elementDelete =  event.target.parentNode;
   console.log(elementDelete);
-  console.log(event.target.dataset.index);
-  let indexdata = book.title;
-  console.log(indexdata);
-   /*let removeCardIndex = removeCard.dataset.index;*/
-  /*myLibrary.splice(removeBook,1);
+
   elementDelete.remove();
-  /*library.splice(removeBook,1)*/
 
-  /*console.log(bookeRemove);  */
-  /*console.log(typeof bookeRemove);  */
   
-  /*console.log(typeof myLibrary);
-  console.log(myLibrary);
-  /*console.log(typeof library);
-  console.log(library);*/
-
-/*}*/
-
-
-
+}
 
 
 function on() {//crea un overlay y muestra el formulario para crear un libro
@@ -115,9 +102,9 @@ function createInfoCard(newBook){
   Delete.classList.add('delete');
 
   newCardBook.style.display ="flex";
-
-  /*Delete.addEventListener('click',deleteFunc);*/
-
+ 
+  Delete.addEventListener("click",deleteCard)
+ 
   }
 
 
@@ -207,6 +194,8 @@ function createInfoCard(newBook){
         console.log(" " + this.title+ " " + this.author +" " + this.numberPages +" " + this.read );
     }
 }
+
+
 
 /*function addBookToLibrary(title,author,numberPages,read) { // funcion que recibe info del html y lo va a pasar a la funcion book
   
