@@ -9,21 +9,19 @@ header{
     justify-content:space-between;
     align-items: center;
     box-shadow: 5px 5px 5px #81808082;
+    width: 100%;
+    height: auto;
 }
 
 #logoContainer{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
         #library{
             font-size: 72px;
             font-family: 'Anek Gurmukhi', sans-serif;
             font-weight: normal;
-        }
-        
-        #gitcontainer{
-            margin-right: 100px;
         }
 
 #libraryContainer{
@@ -186,4 +184,23 @@ footer{
     position: fixed;
 }
 
+@media only screen and (max-width: 1245px) {
+    
+#bookContainer{
+    grid-template-columns:33% 33% 33%;
+}
+  }
 
+@media only screen and (max-width: 800px) {
+    
+#bookContainer{
+    grid-template-columns:50% 50%;
+}
+}
+
+@media only screen and (max-width: 550px) {
+    
+#bookContainer{
+    grid-template-columns:100%;
+}
+    }
