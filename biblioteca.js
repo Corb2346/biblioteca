@@ -22,7 +22,7 @@ addButtonOverlay.addEventListener('click',addBookToLibrary);
 
 
 function on() {//crea un overlay y muestra el formulario para crear un libro
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "flex";
     inputInfoBook.style.display = "block";
   }
 

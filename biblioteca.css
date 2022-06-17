@@ -36,6 +36,9 @@ header{
 }
 
 #overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -54,8 +57,8 @@ header{
         height: 400px;
         width: 300px; 
         position: absolute;
-        top: 15%;
-        left: 40%;
+        top:15%;
+
     }
         #flexContainer{
             display: flex;
