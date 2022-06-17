@@ -20,22 +20,6 @@ let status = document.getElementById("status");
 
 addButtonOverlay.addEventListener('click',addBookToLibrary);
 
-/*function deleteCard(event){
-  let bookContainer = document.querySelectorAll("newcardbook");
-  console.log(bookContainer);
-  console.log(event.tarjet);
-  
-  let elementDelete =  event.target.parentNode;
-  console.log(elementDelete);
-
-  myLibrary.splice(myLibrary.indexOf(newBook),1);
-    elementDelete.remove();
-
-    console.log(myLibrary);
-
-
-}*/
-
 
 function on() {//crea un overlay y muestra el formulario para crear un libro
     document.getElementById("overlay").style.display = "block";
@@ -52,7 +36,7 @@ function createInfoCard(newBook){
   const InputAuthorBook = document.createElement("AuthorBook");
   const InputNumberPages = document.createElement("PagesBook");
   const InputStatus = document.createElement("Status");
-  const UpdateStatus = document.createElement("updateStatus");
+  const UpdateStatus = document.createElement("button");
   const Delete = document.createElement("BUTTON");
   const TextButton = document.createTextNode("Delete");
   newCardBook.setAttribute("id", myLibrary.indexOf(newBook));
@@ -80,19 +64,20 @@ function createInfoCard(newBook){
   InputStatus.textContent = newBook.read;
   InputStatus.classList.add('diplayInfo');
 
-  if( newBook.read === "read It "){
+  if( newBook.read === "Read It"){
 
     InputStatus.style.backgroundColor = "#5FFF7A";
     InputStatus.textContent = newBook.read;
   } else {
     
     InputStatus.style.backgroundColor = "#FF4949";
-    newBook.read = "No read it";
+    newBook.read = "No read It";
     InputStatus.textContent =  newBook.read;
   }
 
   UpdateStatus.textContent = 'UpdateSatus';
   UpdateStatus.classList.add('diplayInfo');
+  UpdateStatus.classList.add('heightbtn');
 
   Delete.textContent = 'Delete';
   Delete.classList.add('delete');
@@ -114,7 +99,47 @@ function createInfoCard(newBook){
 
     console.log(myLibrary);
   })
- 
+
+  
+  UpdateStatus.addEventListener("click",(event)=> {
+    console.log("click");
+
+    let elementDelete =  event.target.parentNode;
+    console.log(elementDelete);
+
+    let lecture = InputStatus.textContent;
+    console.log(lecture);
+
+    let index = myLibrary.indexOf(newBook);
+
+    for(let i = 0; i<myLibrary.length;i++){
+
+      if(index == i){
+        let reciveBook = myLibrary[i];
+        console.log(reciveBook);
+        
+          if( lecture == "No read It" ){
+
+          InputStatus.style.backgroundColor = "#5FFF7A";
+          InputStatus.textContent = "Read It";
+          reciveBook.read = "Read It";
+          console.log(reciveBook);
+
+          }
+          
+          if(lecture == "Read It" ) {
+
+            InputStatus.style.backgroundColor = "#FF4949";
+            InputStatus.textContent =  "No read It";
+            reciveBook.read = "No read It";
+            console.log(reciveBook);
+
+          }
+
+      };
+    }
+    console.log(myLibrary)
+  });
   }
 
 
@@ -145,9 +170,9 @@ function createInfoCard(newBook){
     let readStatus ="";
 
     if(checkBox.checked == true){
-      readStatus = "read It ";
+      readStatus = "Read It";
     } else {
-      readStatus = "no read It";
+      readStatus = "No read It";
     }
 
     let titleBook = inputTitleBook.value;
@@ -204,60 +229,3 @@ function createInfoCard(newBook){
         console.log(" " + this.title+ " " + this.author +" " + this.numberPages +" " + this.read );
     }
 }
-
-
-
-/*function addBookToLibrary(title,author,numberPages,read) { // funcion que recibe info del html y lo va a pasar a la funcion book
-  
-    this.title = title;
-    this.author = author;
-    this.numberPages = numberPages;
-    this.read = read;
-
-    const bookNew = new book(this.title, this.author , this.numberPages ,this.read );*/
-
-       /* titleBook.textContent = bookNew.title;
-        authorBook.textContent = bookNew.author;
-        numberPagesBook.textContent = bookNew.numberPages;
-        if(this.read === "yes"){
-          status.textContent = "read it";
-          status.style.backgroundColor = "#5FFF7A"; VERDE
-        } else {
-          status.textContent = "No read It";
-          status.style.backgroundColor = "#FF4949";//ROJO
-        }
-        myLibrary[indexArray] = bookNew;
-        console.log(myLibrary[indexArray]);
-        
-}   
-
-/*let bookNew = addBookToLibrary("TheHobbit","Tolkien",300,"yes");
-
-console.log(bookNew.title);
-console.log(bookNew.author);
-console.log(bookNew.numberPages);
-console.log(bookNew.read);
-
-bookNew.info();
-
-myLibrary[contador] = bookNew;
-console.log(contador);
-
-console.log(myLibrary[contador]);
-contador++;
-
-bookNew = addBookToLibrary("GameOfThrones","Martin",500,"No");
-
- console.log(bookNew.title);
-console.log(bookNew.author);
-console.log(bookNew.numberPages);
-console.log(bookNew.read);
-
-bookNew.info();
-
-myLibrary[contador] = bookNew;
-
-console.log(myLibrary[contador]);
-
-contador++;
-console.log(contador);*/

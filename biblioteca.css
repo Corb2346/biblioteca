@@ -24,6 +24,9 @@ header{
             font-family: 'Anek Gurmukhi', sans-serif;
             font-weight: normal;
         }
+        #gitcontainer{
+            margin-right: 2%;
+        }
 
 #libraryContainer{
     display: flex;
@@ -165,6 +168,13 @@ header{
                 border-radius: 15px;
                 width: 220px;
                 padding-top: 5px;
+                font-family: 'Anek Gurmukhi', sans-serif;
+            }
+
+            .heightbtn{
+                height:50px ;
+                font-weight: normal;
+                font-size: 30px;
             }
 
         .delete{
