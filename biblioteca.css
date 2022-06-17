@@ -4,14 +4,12 @@ body{
 }
 
 header{
-    border: red solid 2px;
     background-color: #EEEEEE;
     display: flex;
     justify-content:space-between;
     align-items: center;
     box-shadow: 5px 5px 5px #81808082;
     width: 100%;
-    height: auto;
 }
 
 #logoContainer{
@@ -51,6 +49,15 @@ header{
     cursor: pointer; /* Add a pointer on hover */
   }
 
+  #titleContainer{
+    display: flex;
+    justify-content: center;
+  }
+        #tache{
+            position: absolute;
+            left: 85%;
+        }
+
     #inputInfoBook{
         background-color: #EEEEEE;
         border-radius: 25px;
@@ -63,6 +70,7 @@ header{
         #flexContainer{
             display: flex;
             align-items: center;
+            justify-content: center;
             gap:20px;
             flex-direction: column;
             margin-top: 20px;
@@ -135,14 +143,12 @@ header{
 
 
 #bookContainer{
-    border: 5px solid rgb(87, 87, 221);
+
     display: grid;
     grid-template-columns:20% 20% 20% 20%;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
-    margin-left: 35px;
-    margin-right: 35px;
-    gap:50px;
+    gap:5%;
     height: auto;
 }
 
@@ -196,13 +202,38 @@ header{
         }
 
 footer{
-    position: fixed;
+   display: flex;
+   justify-content: flex-start;
 }
 
+    @media only screen and (max-width: 800px) {
+        
+    #bookContainer{
+        grid-template-columns:50% 50%;
+    }
+    }
+    
+
+@media only screen and (min-width: 1246px) {
+    
+    #bookContainer{
+        grid-template-columns:20% 20% 20% 20%;
+        padding-left: 5%;
+    }
+      }
+    
+    @media only screen and (max-width: 800px) {
+        
+    #bookContainer{
+        grid-template-columns:50% 50%;
+    }
+    }
+    
 @media only screen and (max-width: 1245px) {
     
 #bookContainer{
     grid-template-columns:33% 33% 33%;
+    padding-left: 2%;
 }
   }
 
@@ -216,20 +247,52 @@ footer{
 @media only screen and (max-width: 550px) {
     
 #bookContainer{
+    justify-content: center;
     grid-template-columns:65%;
-    padding-left: auto;
+
 }
     }
 
     
-@media only screen and (max-width: 400px) {
-   
-header{
-    width:fit-content;
-    height: fit-content;
-}
-.inputTitle{
-    width: center;
+@media only screen and (min-width:320px) and  (max-width: 460px ) {
+
+    #bookContainer{
+        justify-content: center;
+        grid-template-columns:75%;
+
+    }
+    #library{
+        font-size: 50px;
+
+    }
+        }
+
+@media only screen and (min-width:300px) and  (max-width: 320px ) {
+
+    #bookContainer{
+        justify-content: center;
+        grid-template-columns:75%;
+        }
+
+        #library{
+        font-size: 40px;
+        
+        }
 }
 
+
+@media only screen and (min-width:150px) and  (max-width: 299px ) {
+
+    header{
+       width: fit-content;
+    }
+    #bookContainer{
+        justify-content: center;
+        grid-template-columns:100%;
         }
+        
+        #library{
+        font-size: 35px;
+        
+        }
+}

@@ -11,19 +11,31 @@ let inputTitleBook = document.getElementById("inputTitleBook");//div donde se me
 let inputAuthorBook = document.getElementById("inputAuthorBook");//div donde se mete la info
 let inputnumberPagesBook = document.getElementById("inputnumberPagesBook");//div donde se mete la info
 let addButtonOverlay = document.querySelector("#addButtonOverlay");
+let tache = document.querySelector("#tache");
 
-/*let titleBook = document.getElementById("titleBook");//text area donde se muestra la informacion del titulo ingresado por usuario
-let authorBook = document.getElementById("authorBook");//text area donde se muestra la informacion del autor ingresado por usuario
-let numberPagesBook = document.getElementById("numberPagesBook");//text area donde se muestra la informacion del numero de paginas ingresado por usuario*/
+
 let checkBox = document.getElementById("checkBox");//llama al checkbox 
 let status = document.getElementById("status");
 
 addButtonOverlay.addEventListener('click',addBookToLibrary);
+tache.addEventListener("click",displayOff);
 
-
+function displayOff() {
+  document.getElementById("overlay").style.display = "none";
+  
+}
 function on() {//crea un overlay y muestra el formulario para crear un libro
     document.getElementById("overlay").style.display = "flex";
     inputInfoBook.style.display = "block";
+
+    inputTitleBook.placeholder = "Title";
+    inputAuthorBook.placeholder = "Author ";
+    inputnumberPagesBook.placeholder = "Number of Pages ";
+
+    inputTitleBook.value = "";
+    inputAuthorBook.value = "";
+    inputnumberPagesBook.value="";
+    checkBox.checked = "";
   }
 
 function createInfoCard(newBook){
@@ -161,9 +173,10 @@ function createInfoCard(newBook){
       inputnumberPagesBook.placeholder = "Insert number of Pages";
 
     } else {document.getElementById("overlay").style.display = "none";//si no faltan campos por llenar quita el display y el formulario
-            /*bookCard.style.display = "flex";*/
             
     }
+
+   
   }
 
   function addBookToLibrary(){//captura los datos introducidos en los input del html
